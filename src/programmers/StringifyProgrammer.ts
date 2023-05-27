@@ -335,7 +335,8 @@ export namespace StringifyProgrammer {
                 for (const native of meta.natives)
                     unions.push({
                         type: "object",
-                        is: () => check_native(native)(input),
+                        is: () =>
+                            check_native(explore)(importer)(native)(input),
                         value: () =>
                             AtomicPredicator.native(native)
                                 ? decode_atomic(project)(importer)(

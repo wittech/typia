@@ -20,6 +20,9 @@ import { $report } from "./$report";
 import { $rest } from "./$rest";
 import { $string } from "./$string";
 import { $tail } from "./$tail";
+import { $to_bool } from "./$to_bool";
+import { $to_date } from "./$to_date";
+import { $to_decimal } from "./$to_decimal";
 
 /**
  * @internal
@@ -35,6 +38,9 @@ export namespace Namespace {
         is_date: $is_date,
         is_datetime: $is_datetime,
         is_custom: $is_custom,
+        to_date: $to_date,
+        to_bool: $to_bool,
+        to_decimal: $to_decimal,
     });
 
     export const assert = (method: string) => ({

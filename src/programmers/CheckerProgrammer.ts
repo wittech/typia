@@ -23,6 +23,8 @@ import { UnionExplorer } from "./helpers/UnionExplorer";
 import { check_array } from "./internal/check_array";
 import { check_array_length } from "./internal/check_array_length";
 import { check_bigint } from "./internal/check_bigint";
+import { check_boolean } from "./internal/check_boolean";
+import { check_decimal } from "./internal/check_decimal";
 import { check_native } from "./internal/check_native";
 import { check_number } from "./internal/check_number";
 import { check_string } from "./internal/check_string";
@@ -311,6 +313,11 @@ export namespace CheckerProgrammer {
                         )(input),
                         combined: false,
                     });
+                else if (type === "boolean")
+                    binaries.push({
+                        expression: check_boolean(explore)(importer)(input),
+                        combined: false,
+                    });
                 else
                     add(
                         true,
@@ -333,7 +340,7 @@ export namespace CheckerProgrammer {
             // NATIVE CLASSES
             for (const native of meta.natives)
                 binaries.push({
-                    expression: check_native(native)(input),
+                    expression: check_native(explore)(importer)(native)(input),
                     combined: false,
                 });
 
@@ -358,7 +365,7 @@ export namespace CheckerProgrammer {
             // SETS
             if (meta.sets.length) {
                 const install = prepare(
-                    check_native("Set")(input),
+                    check_native(explore)(importer)("Set")(input),
                     meta.sets
                         .map((elem) => `Set<${elem.getName()}>`)
                         .join(" | "),
@@ -382,7 +389,7 @@ export namespace CheckerProgrammer {
             // MAPS
             if (meta.maps.length) {
                 const install = prepare(
-                    check_native("Map")(input),
+                    check_native(explore)(importer)("Map")(input),
                     meta.maps
                         .map(({ key, value }) => `Map<${key}, ${value}>`)
                         .join(" | "),
@@ -463,25 +470,36 @@ export namespace CheckerProgrammer {
             }
 
             // OBJECT
-            if (meta.objects.length > 0)
-                prepare(
-                    ExpressionFactory.isObject({
-                        checkNull: true,
-                        checkArray: meta.objects.some((obj) =>
-                            obj.properties.every(
-                                (prop) =>
-                                    !prop.key.isSoleLiteral() ||
-                                    !prop.value.required,
+            if (meta.objects.length > 0) {
+                //判断是否是Decimal类型；
+                const metaObj = meta.objects[0];
+                if (metaObj?.name === "Decimal") {
+                    //对decimal做特殊处理；
+                    binaries.push({
+                        expression: check_decimal(explore)(importer)(input),
+                        combined: false,
+                    });
+                } else {
+                    prepare(
+                        ExpressionFactory.isObject({
+                            checkNull: true,
+                            checkArray: meta.objects.some((obj) =>
+                                obj.properties.every(
+                                    (prop) =>
+                                        !prop.key.isSoleLiteral() ||
+                                        !prop.value.required,
+                                ),
                             ),
-                        ),
-                    })(input),
-                    meta.objects.map((obj) => obj.name).join(" | "),
-                )(
-                    explore_objects(config)(importer)(input, meta, {
-                        ...explore,
-                        from: "object",
-                    }),
-                );
+                        })(input),
+                        meta.objects.map((obj) => obj.name).join(" | "),
+                    )(
+                        explore_objects(config)(importer)(input, meta, {
+                            ...explore,
+                            from: "object",
+                        }),
+                    );
+                }
+            }
 
             if (instances.length) {
                 const transformer =
