@@ -66,6 +66,7 @@ export namespace ValidateProgrammer {
                 combiner: combine(equals)(importer),
                 joiner: joiner(equals)(importer),
                 success: ts.factory.createTrue(),
+                assignments: [],
             })(importer)(type, name);
 
             return ts.factory.createArrowFunction(

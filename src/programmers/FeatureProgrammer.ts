@@ -25,7 +25,7 @@ export namespace FeatureProgrammer {
     ----------------------------------------------------------- */
     export interface IConfig<Output extends ts.ConciseBody = ts.ConciseBody> {
         types: IConfig.ITypes;
-
+        assignments: ts.Statement[];
         /**
          * Prefix name of functions for specific object types.
          */
@@ -233,7 +233,7 @@ export namespace FeatureProgrammer {
                 [],
             );
 
-            // RETURNS THE OPTIMAL ARROW FUNCTION
+            // RETURNS THE OPTIMAL ARROW FUNCTION；这里是生成$io的箭头函数表达式functors的代码和$uo的代码
             const functors: ts.VariableStatement[] = (
                 config.generator?.functors ?? write_functors(config)(importer)
             )(collection);
@@ -254,6 +254,7 @@ export namespace FeatureProgrammer {
                 undefined,
                 ts.factory.createBlock(
                     [
+                        ...config.assignments, //增加赋值语句的输出
                         ...added,
                         ...functors.filter((_, i) =>
                             importer.hasLocal(`${config.functors}${i}`),

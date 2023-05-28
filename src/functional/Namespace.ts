@@ -6,14 +6,25 @@ import { $any } from "./$any";
 import { $every } from "./$every";
 import { $guard } from "./$guard";
 import { $is_between } from "./$is_between";
+import { $is_contact } from "./$is_contact";
 import { $is_custom } from "./$is_custom";
 import { $is_date } from "./$is_date";
 import { $is_datetime } from "./$is_datetime";
 import { $is_email } from "./$is_email";
+import { $is_idcard, $is_idcard_x } from "./$is_idcard";
 import { $is_ipv4 } from "./$is_ipv4";
 import { $is_ipv6 } from "./$is_ipv6";
+import { $is_mobile } from "./$is_mobile";
+import { $is_name } from "./$is_name";
+import { $is_passport } from "./$is_passport";
+import { $is_password } from "./$is_password";
+import { $is_password_h } from "./$is_password_h";
+import { $is_password_m } from "./$is_password_m";
+import { $is_telphone } from "./$is_telphone";
 import { $is_url } from "./$is_url";
+import { $is_username } from "./$is_username";
 import { $is_uuid } from "./$is_uuid";
+import { $is_zipcode } from "./$is_zipcode";
 import { $join } from "./$join";
 import { $number } from "./$number";
 import { $report } from "./$report";
@@ -38,6 +49,18 @@ export namespace Namespace {
         is_date: $is_date,
         is_datetime: $is_datetime,
         is_custom: $is_custom,
+        is_mobile: $is_mobile,
+        is_telphone: $is_telphone,
+        is_username: $is_username,
+        is_password: $is_password,
+        is_password_m: $is_password_m,
+        is_password_h: $is_password_h,
+        is_passport: $is_passport,
+        is_contact: $is_contact,
+        is_zipcode: $is_zipcode,
+        is_idcard: $is_idcard,
+        is_idcard_x: $is_idcard_x,
+        is_name: $is_name,
         to_date: $to_date,
         to_bool: $to_bool,
         to_decimal: $to_decimal,

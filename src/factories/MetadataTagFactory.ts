@@ -219,6 +219,12 @@ export namespace MetadataTagFactory {
                 value: parse_number(identifier, text),
             };
         },
+        data: (_identifier, _metadata, text, _output) => {
+            return {
+                kind: "data",
+                value: text,
+            };
+        },
     };
 }
 
@@ -239,7 +245,19 @@ const FORMATS: Map<string, IMetadataTag.IFormat["value"]> = new Map([
     ["date", "date"],
     ["datetime", "datetime"],
     ["date-time", "datetime"],
-    ["dateTime", "datetime"],
+    ["idcard", "idcard"],
+    ["idCard", "idcard"],
+    ["id-card", "idcard"],
+    ["idcard_x", "idcard_x"],
+    ["passport", "passport"],
+    ["telphone", "telphone"],
+    ["contact", "contact"],
+    ["name", "name"],
+    ["username", "username"],
+    ["password", "password"],
+    ["password_m", "password_m"],
+    ["password_h", "password_h"],
+    ["mobile", "mobile"],
 ]);
 
 const WRONG_TYPE = (

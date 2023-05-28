@@ -16,7 +16,9 @@ export type IMetadataTag =
     // ARRAY
     | IMetadataTag.IItems
     | IMetadataTag.IMinItems
-    | IMetadataTag.IMaxItems;
+    | IMetadataTag.IMaxItems
+    // 通用类型
+    | IMetadataTag.IData;
 
 export namespace IMetadataTag {
     /* -----------------------------------------------------------
@@ -60,9 +62,28 @@ export namespace IMetadataTag {
     /* -----------------------------------------------------------
         STRING
     ----------------------------------------------------------- */
+    //增加身份证idcard、手机号码mobile、固话号码telphone等
     export interface IFormat {
         kind: "format";
-        value: "uuid" | "email" | "url" | "ipv4" | "ipv6" | "date" | "datetime";
+        value:
+            | "uuid"
+            | "email"
+            | "url"
+            | "ipv4"
+            | "ipv6"
+            | "date"
+            | "datetime"
+            | "idcard"
+            | "idcard_x"
+            | "passport"
+            | "telphone"
+            | "contact"
+            | "name"
+            | "username"
+            | "password"
+            | "password_m"
+            | "password_h"
+            | "mobile";
     }
 
     export interface IPattern {
@@ -101,5 +122,11 @@ export namespace IMetadataTag {
     export interface IMaxItems {
         kind: "maxItems";
         value: number;
+    }
+
+    //增加@data值引用的metaTag，用于代码值从对象属性中获取值和设置到对象属性中去；
+    export interface IData {
+        kind: "data";
+        value: string;
     }
 }

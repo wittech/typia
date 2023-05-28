@@ -732,6 +732,7 @@ export namespace StringifyProgrammer {
             initializer,
             decoder: decode(project, importer),
             objector: OBJECTOR(project, importer),
+            assignments: [],
         });
 
     const initializer: FeatureProgrammer.IConfig["initializer"] =

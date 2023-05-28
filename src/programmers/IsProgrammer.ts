@@ -74,6 +74,7 @@ export namespace IsProgrammer {
                 failure: () => ts.factory.createFalse(),
             },
             success: ts.factory.createTrue(),
+            assignments: [],
         });
 
     export namespace CONFIG {

@@ -291,6 +291,7 @@ export namespace PruneProgrammer {
             initializer,
             decoder: decode(project)(importer),
             objector: objector(project)(importer),
+            assignments: [],
         });
 
     const objector =

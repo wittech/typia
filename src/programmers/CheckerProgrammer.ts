@@ -34,6 +34,7 @@ import { decode_union_object } from "./internal/decode_union_object";
 
 export namespace CheckerProgrammer {
     export interface IConfig {
+        assignments: ts.Statement[]; //增加对象赋值的处理代码逻辑；用于字段值引用
         functors: string;
         unioners: string;
         path: boolean;
@@ -143,6 +144,7 @@ export namespace CheckerProgrammer {
                 path: config.path,
                 functors: config.functors,
                 unioners: config.unioners,
+                assignments: config.assignments,
                 initializer:
                     ({ checker }) =>
                     (type) => {
@@ -288,7 +290,7 @@ export namespace CheckerProgrammer {
                         add(true, getConstantValue(val));
 
             // ATOMIC VALUES
-            for (const type of meta.atomics)
+            for (const type of meta.atomics) {
                 if (AtomicPredicator.atomic(meta)(type) === false) continue;
                 else if (type === "number")
                     binaries.push({
@@ -324,6 +326,26 @@ export namespace CheckerProgrammer {
                         ts.factory.createStringLiteral(type),
                         ValueFactory.TYPEOF(input),
                     );
+                //处理metaTags中包括值的处理逻辑；@data引用别的属性的值；
+                for (const tag of metaTags) {
+                    if (tag.kind === "data") {
+                        //如果当前属性的值是引用于别的属性，要判断是否存在.，如果没有点说明就直接赋值即可；如果有点说明是某个对象中的值，需要额外进行处理；
+                        //const props = tag.value.split(".");
+                        // for (const prop of props) {
+                        // }
+                        //参考：https://github.com/meriyah/meriyah/wiki/ESTree-Node-Types-Table
+                        const assignment = ts.factory.createExpressionStatement(
+                            ts.factory.createAssignment(
+                                input,
+                                ts.factory.createIdentifier(
+                                    `input.${tag.value}`,
+                                ),
+                            ),
+                        );
+                        config.assignments.push(assignment);
+                    }
+                }
+            }
 
             // TEMPLATE LITERAL VALUES
             if (meta.templates.length)

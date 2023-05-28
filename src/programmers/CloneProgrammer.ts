@@ -334,6 +334,7 @@ export namespace CloneProgrammer {
         initializer,
         decoder: decode(project, importer),
         objector: OBJECTOR(project, importer),
+        assignments: [],
     });
 
     const OBJECTOR = (
