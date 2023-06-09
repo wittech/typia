@@ -91,7 +91,13 @@ type Task = (
     modulo: ts.LeftHandSideExpression,
 ) => (expression: ts.CallExpression) => ts.Expression;
 
-const LIB_PATH = path.join("node_modules", "typia", "lib", "module.d.ts");
+const LIB_PATH = path.join(
+    "node_modules",
+    "@withub",
+    "typia",
+    "lib",
+    "module.d.ts",
+);
 const SRC_PATH = path.resolve(path.join(__dirname, "..", "module.ts"));
 const CLI_PATH = path.resolve(
     path.join(__dirname, "..", "..", "..", "src", "module.ts"),
