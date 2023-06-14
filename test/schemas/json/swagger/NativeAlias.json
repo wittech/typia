@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/NativeAlias"
+      "$ref": "#/components/schemas/NativeAlias"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "NativeAlias": {
         "type": "object",
         "properties": {
@@ -70,7 +70,7 @@
             "$ref": "#/components/objects/Float64Array"
           },
           "buffer": {
-            "$ref": "#/components/objects/__type"
+            "$ref": "#/components/schemas/__type"
           },
           "arrayBuffer": {
             "x-typia-required": true,
@@ -88,10 +88,10 @@
             "$ref": "#/components/objects/DataView"
           },
           "weakSet": {
-            "$ref": "#/components/aliases/NativeAlias.WEAKSET"
+            "$ref": "#/components/schemas/NativeAlias.WEAKSET"
           },
           "weakMap": {
-            "$ref": "#/components/aliases/NativeAlias.WEAKMAP"
+            "$ref": "#/components/schemas/NativeAlias.WEAKMAP"
           }
         },
         "nullable": false,
@@ -216,23 +216,21 @@
         "properties": {},
         "nullable": false
       },
+      "NativeAlias.WEAKSET": {
+        "$ref": "#/components/objects/WeakSet"
+      },
       "WeakSet": {
         "type": "object",
         "properties": {},
         "nullable": false
       },
+      "NativeAlias.WEAKMAP": {
+        "$ref": "#/components/objects/WeakMap"
+      },
       "WeakMap": {
         "type": "object",
         "properties": {},
         "nullable": false
-      }
-    },
-    "aliases": {
-      "NativeAlias.WEAKSET": {
-        "$ref": "#/components/objects/WeakSet"
-      },
-      "NativeAlias.WEAKMAP": {
-        "$ref": "#/components/objects/WeakMap"
       }
     }
   },

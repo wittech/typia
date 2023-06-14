@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/TagMatrix"
+      "$ref": "#/components/schemas/TagMatrix"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "TagMatrix": {
         "type": "object",
         "properties": {

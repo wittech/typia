@@ -1,11 +1,31 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ObjectNullable"
+      "$ref": "#/components/schemas/ObjectNullable"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ObjectNullable": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ObjectNullable.IProduct"
+        },
+        "x-typia-tuple": {
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/components/schemas/ObjectNullable.IProduct"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectNullable.IProduct"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectNullable.IProduct"
+            }
+          ]
+        }
+      },
       "ObjectNullable.IProduct": {
         "type": "object",
         "properties": {
@@ -15,18 +35,18 @@
             "type": "string"
           },
           "manufacturer": {
-            "$ref": "#/components/objects/ObjectNullable.IManufacturer"
+            "$ref": "#/components/schemas/ObjectNullable.IManufacturer"
           },
           "brand": {
-            "$ref": "#/components/objects/ObjectNullable.IBrand.Nullable"
+            "$ref": "#/components/schemas/ObjectNullable.IBrand.Nullable"
           },
           "similar": {
             "oneOf": [
               {
-                "$ref": "#/components/objects/ObjectNullable.IBrand.Nullable"
+                "$ref": "#/components/schemas/ObjectNullable.IBrand.Nullable"
               },
               {
-                "$ref": "#/components/objects/ObjectNullable.IManufacturer.Nullable"
+                "$ref": "#/components/schemas/ObjectNullable.IManufacturer.Nullable"
               }
             ],
             "x-typia-required": true,
@@ -113,30 +133,6 @@
           "name"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ObjectNullable": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/ObjectNullable.IProduct"
-        },
-        "x-typia-rest": false,
-        "x-typia-tuple": {
-          "type": "array",
-          "items": [
-            {
-              "$ref": "#/components/objects/ObjectNullable.IProduct"
-            },
-            {
-              "$ref": "#/components/objects/ObjectNullable.IProduct"
-            },
-            {
-              "$ref": "#/components/objects/ObjectNullable.IProduct"
-            }
-          ],
-          "x-typia-rest": false
-        }
       }
     }
   },

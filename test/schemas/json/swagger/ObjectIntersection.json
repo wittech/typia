@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ObjectIntersection"
+      "$ref": "#/components/schemas/ObjectIntersection"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectIntersection": {
         "type": "object",
         "properties": {
@@ -32,11 +32,6 @@
           "vulnerable"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ObjectIntersection": {
-        "$ref": "#/components/objects/ObjectIntersection"
       }
     }
   },

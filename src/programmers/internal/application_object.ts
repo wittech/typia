@@ -27,16 +27,16 @@ export const application_object =
             options.purpose === "ajv"
                 ? obj.name
                 : `${obj.name}${nullable ? ".Nullable" : ""}`;
-        const $id: string = `${JSON_COMPONENTS_PREFIX}/objects/${key}`;
+        const $id: string = `${JSON_COMPONENTS_PREFIX}/schemas/${key}`;
         const out = () =>
             options.purpose === "ajv" && obj.recursive
                 ? { $recursiveRef: $id }
                 : { $ref: $id };
 
         // TEMPORARY ASSIGNMENT
-        if (components.objects?.[key] !== undefined) return out();
-        components.objects ??= {};
-        components.objects[key] = {} as any;
+        if (components.schemas?.[key] !== undefined) return out();
+        components.schemas ??= {};
+        components.schemas[key] = {} as any;
 
         // ITERATE PROPERTIES
         const properties: Record<string, any> = {};
@@ -131,7 +131,7 @@ export const application_object =
                           join(options)(components)(extraMeta),
                   }),
         };
-        components.objects[key] = schema;
+        components.schemas[key] = schema;
         return out();
     };
 

@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ToJsonDouble.Child"
+      "$ref": "#/components/schemas/ToJsonDouble.Child"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ToJsonDouble.Child": {
         "type": "object",
         "properties": {

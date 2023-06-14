@@ -1,11 +1,47 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TupleRestObject"
+      "$ref": "#/components/schemas/TupleRestObject"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "TupleRestObject": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/components/schemas/TupleRestObject.IObject"
+            }
+          ]
+        },
+        "x-typia-tuple": {
+          "type": "array",
+          "items": [
+            {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
+              "type": "boolean"
+            },
+            {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
+              "type": "number"
+            },
+            {
+              "$ref": "#/components/schemas/TupleRestObject.IObject"
+            }
+          ]
+        }
+      },
       "TupleRestObject.IObject": {
         "type": "object",
         "properties": {
@@ -20,40 +56,6 @@
           "value"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "TupleRestObject": {
-        "type": "array",
-        "items": {
-          "oneOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "$ref": "#/components/objects/TupleRestObject.IObject"
-            }
-          ]
-        },
-        "x-typia-rest": true,
-        "x-typia-tuple": {
-          "type": "array",
-          "items": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "$ref": "#/components/objects/TupleRestObject.IObject"
-            }
-          ],
-          "x-typia-rest": true
-        }
       }
     }
   },

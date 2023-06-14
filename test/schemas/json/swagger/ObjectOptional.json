@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ObjectOptional"
+      "$ref": "#/components/schemas/ObjectOptional"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectOptional": {
         "type": "object",
         "properties": {

@@ -1,11 +1,39 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ObjectUnionExplicit"
+      "$ref": "#/components/schemas/ObjectUnionExplicit"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ObjectUnionExplicit": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_point_doublequote__comma__space_ObjectUnionExplicit.IPoint_gt_"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_line_doublequote__comma__space_ObjectUnionExplicit.ILine_gt_"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_triangle_doublequote__comma__space_ObjectUnionExplicit.ITriangle_gt_"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_rectangle_doublequote__comma__space_ObjectUnionExplicit.IRectangle_gt_"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_polyline_doublequote__comma__space_ObjectUnionExplicit.IPolyline_gt_"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_polygon_doublequote__comma__space_ObjectUnionExplicit.IPolygon_gt_"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionExplicit.Discriminator_lt__doublequote_circle_doublequote__comma__space_ObjectUnionExplicit.ICircle_gt_"
+            }
+          ]
+        }
+      },
       "ObjectUnionExplicit.Discriminator_lt__doublequote_point_doublequote__comma__space_ObjectUnionExplicit.IPoint_gt_": {
         "type": "object",
         "properties": {
@@ -40,10 +68,10 @@
         "type": "object",
         "properties": {
           "p1": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "p2": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "type": {
             "x-typia-required": true,
@@ -87,13 +115,13 @@
         "type": "object",
         "properties": {
           "p1": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "p2": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "p3": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "type": {
             "x-typia-required": true,
@@ -117,16 +145,16 @@
         "type": "object",
         "properties": {
           "p1": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "p2": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "p3": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "p4": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "type": {
             "x-typia-required": true,
@@ -155,7 +183,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+              "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
             }
           },
           "type": {
@@ -178,14 +206,14 @@
         "type": "object",
         "properties": {
           "outer": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPolyline"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPolyline"
           },
           "inner": {
             "x-typia-required": true,
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectUnionExplicit.IPolyline"
+              "$ref": "#/components/schemas/ObjectUnionExplicit.IPolyline"
             }
           },
           "type": {
@@ -213,7 +241,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+              "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
             }
           }
         },
@@ -227,7 +255,7 @@
         "type": "object",
         "properties": {
           "centroid": {
-            "$ref": "#/components/objects/ObjectUnionExplicit.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionExplicit.IPoint"
           },
           "radius": {
             "x-typia-required": true,
@@ -250,57 +278,6 @@
           "type"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ObjectUnionExplicit": {
-        "type": "array",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_point_doublequote__comma__space_ObjectUnionExplicit.IPoint_gt_"
-            },
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_line_doublequote__comma__space_ObjectUnionExplicit.ILine_gt_"
-            },
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_triangle_doublequote__comma__space_ObjectUnionExplicit.ITriangle_gt_"
-            },
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_rectangle_doublequote__comma__space_ObjectUnionExplicit.IRectangle_gt_"
-            },
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_polyline_doublequote__comma__space_ObjectUnionExplicit.IPolyline_gt_"
-            },
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_polygon_doublequote__comma__space_ObjectUnionExplicit.IPolygon_gt_"
-            },
-            {
-              "$ref": "#/components/aliases/ObjectUnionExplicit.Discriminator_lt__doublequote_circle_doublequote__comma__space_ObjectUnionExplicit.ICircle_gt_"
-            }
-          ]
-        }
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_point_doublequote__comma__space_ObjectUnionExplicit.IPoint_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_point_doublequote__comma__space_ObjectUnionExplicit.IPoint_gt_"
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_line_doublequote__comma__space_ObjectUnionExplicit.ILine_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_line_doublequote__comma__space_ObjectUnionExplicit.ILine_gt_"
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_triangle_doublequote__comma__space_ObjectUnionExplicit.ITriangle_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_triangle_doublequote__comma__space_ObjectUnionExplicit.ITriangle_gt_"
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_rectangle_doublequote__comma__space_ObjectUnionExplicit.IRectangle_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_rectangle_doublequote__comma__space_ObjectUnionExplicit.IRectangle_gt_"
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_polyline_doublequote__comma__space_ObjectUnionExplicit.IPolyline_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_polyline_doublequote__comma__space_ObjectUnionExplicit.IPolyline_gt_"
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_polygon_doublequote__comma__space_ObjectUnionExplicit.IPolygon_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_polygon_doublequote__comma__space_ObjectUnionExplicit.IPolygon_gt_"
-      },
-      "ObjectUnionExplicit.Discriminator_lt__doublequote_circle_doublequote__comma__space_ObjectUnionExplicit.ICircle_gt_": {
-        "$ref": "#/components/objects/ObjectUnionExplicit.Discriminator_lt__doublequote_circle_doublequote__comma__space_ObjectUnionExplicit.ICircle_gt_"
       }
     }
   },

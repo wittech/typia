@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/TagDefault"
+      "$ref": "#/components/schemas/TagDefault"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "TagDefault": {
         "type": "object",
         "properties": {

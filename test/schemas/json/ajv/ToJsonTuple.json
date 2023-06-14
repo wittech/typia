@@ -1,13 +1,44 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ToJsonTuple"
+      "$ref": "#/components/schemas/ToJsonTuple"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ToJsonTuple": {
+        "$id": "#/components/schemas/ToJsonTuple",
+        "type": "array",
+        "items": [
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string"
+          },
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "number"
+          },
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "boolean"
+          },
+          {
+            "$ref": "#/components/schemas/ToJsonTuple.IObject"
+          }
+        ]
+      },
+      "ToJsonTuple.IObject": {
+        "$id": "#/components/schemas/ToJsonTuple.IObject",
+        "$ref": "#/components/schemas/ToJsonTuple.IHobby"
+      },
       "ToJsonTuple.IHobby": {
-        "$id": "#/components/objects/ToJsonTuple.IHobby",
+        "$id": "#/components/schemas/ToJsonTuple.IHobby",
         "type": "object",
         "properties": {
           "code": {
@@ -26,31 +57,6 @@
           "name"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ToJsonTuple": {
-        "$id": "#/components/aliases/ToJsonTuple",
-        "type": "array",
-        "items": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          },
-          {
-            "$ref": "#/components/aliases/ToJsonTuple.IObject"
-          }
-        ],
-        "x-typia-rest": false
-      },
-      "ToJsonTuple.IObject": {
-        "$id": "#/components/aliases/ToJsonTuple.IObject",
-        "$ref": "#/components/objects/ToJsonTuple.IHobby"
       }
     }
   },

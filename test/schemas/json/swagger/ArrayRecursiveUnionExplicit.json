@@ -1,11 +1,36 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit"
+      "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ArrayRecursiveUnionExplicit": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket"
+        }
+      },
+      "ArrayRecursiveUnionExplicit.IBucket": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IDirectory"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IImageFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.ITextFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IZipFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IShortcut"
+          }
+        ]
+      },
       "ArrayRecursiveUnionExplicit.IDirectory": {
         "type": "object",
         "properties": {
@@ -29,7 +54,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket"
+              "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket"
             }
           },
           "type": {
@@ -253,7 +278,7 @@
             "type": "string"
           },
           "target": {
-            "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket"
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket"
           },
           "type": {
             "x-typia-required": true,
@@ -282,33 +307,6 @@
           "extension"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ArrayRecursiveUnionExplicit": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket"
-        }
-      },
-      "ArrayRecursiveUnionExplicit.IBucket": {
-        "oneOf": [
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.IDirectory"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.IImageFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.ITextFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.IZipFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.IShortcut"
-          }
-        ]
       }
     }
   },

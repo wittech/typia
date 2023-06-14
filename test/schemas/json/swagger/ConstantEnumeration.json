@@ -1,16 +1,15 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ConstantEnumeration"
+      "$ref": "#/components/schemas/ConstantEnumeration"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "ConstantEnumeration": {
         "type": "array",
         "items": {
-          "$ref": "#/components/aliases/ConstantEnumeration.Enumeration"
+          "$ref": "#/components/schemas/ConstantEnumeration.Enumeration"
         }
       },
       "ConstantEnumeration.Enumeration": {

@@ -1,13 +1,64 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ToJsonArray"
+      "$ref": "#/components/schemas/ToJsonArray"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ToJsonArray": {
+        "$id": "#/components/schemas/ToJsonArray",
+        "type": "array",
+        "items": [
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "array",
+            "items": {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "array",
+            "items": {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
+              "type": "number"
+            }
+          },
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "array",
+            "items": {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
+              "type": "string"
+            }
+          },
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToJsonArray.IObject"
+            }
+          }
+        ]
+      },
       "ToJsonArray.IObject": {
-        "$id": "#/components/objects/ToJsonArray.IObject",
+        "$id": "#/components/schemas/ToJsonArray.IObject",
         "type": "object",
         "properties": {
           "id": {
@@ -20,39 +71,6 @@
           "id"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ToJsonArray": {
-        "$id": "#/components/aliases/ToJsonArray",
-        "type": "array",
-        "items": [
-          {
-            "type": "array",
-            "items": {
-              "type": "boolean"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "type": "number"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/objects/ToJsonArray.IObject"
-            }
-          }
-        ],
-        "x-typia-rest": false
       }
     }
   },

@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/MapSimple"
+      "$ref": "#/components/schemas/MapSimple"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "MapSimple": {
         "type": "object",
         "properties": {

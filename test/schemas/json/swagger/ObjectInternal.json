@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ObjectInternal"
+      "$ref": "#/components/schemas/ObjectInternal"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectInternal": {
         "type": "object",
         "properties": {

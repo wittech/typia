@@ -1,28 +1,26 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/SetUnion"
+      "$ref": "#/components/schemas/SetUnion"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "SetUnion": {
+        "$id": "#/components/schemas/SetUnion",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SetUnion.Union"
+        }
+      },
+      "SetUnion.Union": {
+        "$id": "#/components/schemas/SetUnion.Union",
+        "$ref": "#/components/objects/Set"
+      },
       "Set": {
         "type": "object",
         "$id": "#/components/objects/Set",
         "properties": {}
-      }
-    },
-    "aliases": {
-      "SetUnion": {
-        "$id": "#/components/aliases/SetUnion",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/aliases/SetUnion.Union"
-        }
-      },
-      "SetUnion.Union": {
-        "$id": "#/components/aliases/SetUnion.Union",
-        "$ref": "#/components/objects/Set"
       }
     }
   },

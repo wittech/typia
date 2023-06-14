@@ -1,11 +1,17 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TagArray"
+      "$ref": "#/components/schemas/TagArray"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "TagArray": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TagArray.Type"
+        }
+      },
       "TagArray.Type": {
         "type": "object",
         "properties": {
@@ -467,14 +473,6 @@
         ],
         "description": "@minItems 3\n@maxItems 7\n@format uuid",
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "TagArray": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/TagArray.Type"
-        }
       }
     }
   },

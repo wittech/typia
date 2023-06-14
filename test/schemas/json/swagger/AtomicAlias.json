@@ -1,12 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/AtomicAlias"
+      "$ref": "#/components/schemas/AtomicAlias"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "AtomicAlias": {
         "type": "array",
         "items": {
@@ -22,21 +21,28 @@
             }
           ]
         },
-        "x-typia-rest": false,
         "x-typia-tuple": {
           "type": "array",
           "items": [
             {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
               "type": "boolean"
             },
             {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
               "type": "number"
             },
             {
+              "x-typia-rest": false,
+              "x-typia-required": true,
+              "x-typia-optional": false,
               "type": "string"
             }
-          ],
-          "x-typia-rest": false
+          ]
         }
       }
     }

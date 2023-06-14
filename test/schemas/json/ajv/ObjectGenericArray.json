@@ -1,24 +1,24 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ObjectGenericArray"
+      "$ref": "#/components/schemas/ObjectGenericArray"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectGenericArray": {
-        "$id": "#/components/objects/ObjectGenericArray",
+        "$id": "#/components/schemas/ObjectGenericArray",
         "type": "object",
         "properties": {
           "pagination": {
-            "$ref": "#/components/objects/ObjectGenericArray.IPagination"
+            "$ref": "#/components/schemas/ObjectGenericArray.IPagination"
           },
           "data": {
             "x-typia-required": true,
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectGenericArray.IPerson"
+              "$ref": "#/components/schemas/ObjectGenericArray.IPerson"
             }
           }
         },
@@ -29,7 +29,7 @@
         "x-typia-jsDocTags": []
       },
       "ObjectGenericArray.IPagination": {
-        "$id": "#/components/objects/ObjectGenericArray.IPagination",
+        "$id": "#/components/schemas/ObjectGenericArray.IPagination",
         "type": "object",
         "properties": {
           "page": {
@@ -62,7 +62,7 @@
         "x-typia-jsDocTags": []
       },
       "ObjectGenericArray.IPerson": {
-        "$id": "#/components/objects/ObjectGenericArray.IPerson",
+        "$id": "#/components/schemas/ObjectGenericArray.IPerson",
         "type": "object",
         "properties": {
           "name": {
@@ -81,12 +81,6 @@
           "age"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ObjectGenericArray": {
-        "$id": "#/components/aliases/ObjectGenericArray",
-        "$ref": "#/components/objects/ObjectGenericArray"
       }
     }
   },

@@ -1,13 +1,43 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayRecursiveUnionImplicit"
+      "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ArrayRecursiveUnionImplicit": {
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.IBucket"
+        }
+      },
+      "ArrayRecursiveUnionImplicit.IBucket": {
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.IBucket",
+        "oneOf": [
+          {
+            "$recursiveRef": "#/components/schemas/ArrayRecursiveUnionImplicit.IDirectory"
+          },
+          {
+            "$recursiveRef": "#/components/schemas/ArrayRecursiveUnionImplicit.ISharedDirectory"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.IImageFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.ITextFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.IZipFile"
+          },
+          {
+            "$recursiveRef": "#/components/schemas/ArrayRecursiveUnionImplicit.IShortcut"
+          }
+        ]
+      },
       "ArrayRecursiveUnionImplicit.IDirectory": {
-        "$id": "#/components/objects/ArrayRecursiveUnionImplicit.IDirectory",
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.IDirectory",
         "$recursiveAnchor": true,
         "type": "object",
         "properties": {
@@ -31,7 +61,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/aliases/ArrayRecursiveUnionImplicit.IBucket"
+              "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.IBucket"
             }
           }
         },
@@ -44,7 +74,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionImplicit.ISharedDirectory": {
-        "$id": "#/components/objects/ArrayRecursiveUnionImplicit.ISharedDirectory",
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.ISharedDirectory",
         "$recursiveAnchor": true,
         "type": "object",
         "properties": {
@@ -77,7 +107,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/aliases/ArrayRecursiveUnionImplicit.IBucket"
+              "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.IBucket"
             }
           }
         },
@@ -91,7 +121,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionImplicit.IImageFile": {
-        "$id": "#/components/objects/ArrayRecursiveUnionImplicit.IImageFile",
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.IImageFile",
         "type": "object",
         "properties": {
           "id": {
@@ -142,7 +172,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionImplicit.ITextFile": {
-        "$id": "#/components/objects/ArrayRecursiveUnionImplicit.ITextFile",
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.ITextFile",
         "type": "object",
         "properties": {
           "id": {
@@ -181,7 +211,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionImplicit.IZipFile": {
-        "$id": "#/components/objects/ArrayRecursiveUnionImplicit.IZipFile",
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.IZipFile",
         "type": "object",
         "properties": {
           "id": {
@@ -220,7 +250,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionImplicit.IShortcut": {
-        "$id": "#/components/objects/ArrayRecursiveUnionImplicit.IShortcut",
+        "$id": "#/components/schemas/ArrayRecursiveUnionImplicit.IShortcut",
         "$recursiveAnchor": true,
         "type": "object",
         "properties": {
@@ -240,7 +270,7 @@
             "type": "string"
           },
           "target": {
-            "$ref": "#/components/aliases/ArrayRecursiveUnionImplicit.IBucket"
+            "$ref": "#/components/schemas/ArrayRecursiveUnionImplicit.IBucket"
           }
         },
         "required": [
@@ -250,38 +280,6 @@
           "target"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ArrayRecursiveUnionImplicit": {
-        "$id": "#/components/aliases/ArrayRecursiveUnionImplicit",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/aliases/ArrayRecursiveUnionImplicit.IBucket"
-        }
-      },
-      "ArrayRecursiveUnionImplicit.IBucket": {
-        "$id": "#/components/aliases/ArrayRecursiveUnionImplicit.IBucket",
-        "oneOf": [
-          {
-            "$recursiveRef": "#/components/objects/ArrayRecursiveUnionImplicit.IDirectory"
-          },
-          {
-            "$recursiveRef": "#/components/objects/ArrayRecursiveUnionImplicit.ISharedDirectory"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionImplicit.IImageFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionImplicit.ITextFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionImplicit.IZipFile"
-          },
-          {
-            "$recursiveRef": "#/components/objects/ArrayRecursiveUnionImplicit.IShortcut"
-          }
-        ]
       }
     }
   },

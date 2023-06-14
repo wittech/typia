@@ -186,7 +186,7 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                                         $guard(_exceptionable, {
                                             path: _path + $join(key),
                                             expected:
-                                                "DynamicJsonValue.JsonArray",
+                                                "Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null>",
                                             value: value,
                                         }))) ||
                                 ("object" === typeof value &&
@@ -200,13 +200,13 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                                 $guard(_exceptionable, {
                                     path: _path + $join(key),
                                     expected:
-                                        "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string | undefined)",
+                                        "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string | undefined)",
                                     value: value,
                                 }) ||
                                 $guard(_exceptionable, {
                                     path: _path + $join(key),
                                     expected:
-                                        "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string | undefined)",
+                                        "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string | undefined)",
                                     value: value,
                                 })
                             );
@@ -223,7 +223,7 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index1 + "]",
                                     expected:
-                                        "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string)",
+                                        "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string)",
                                     value: elem,
                                 })) &&
                             (null === elem ||
@@ -240,7 +240,7 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                                         $guard(_exceptionable, {
                                             path: _path + "[" + _index1 + "]",
                                             expected:
-                                                "DynamicJsonValue.JsonArray",
+                                                "Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null>",
                                             value: elem,
                                         }))) ||
                                 ("object" === typeof elem &&
@@ -254,13 +254,13 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index1 + "]",
                                     expected:
-                                        "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string)",
+                                        "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string)",
                                     value: elem,
                                 }) ||
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index1 + "]",
                                     expected:
-                                        "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string)",
+                                        "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string)",
                                     value: elem,
                                 })),
                     );
@@ -269,7 +269,7 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string)",
+                                "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string)",
                             value: input,
                         })) &&
                     (null === input ||
@@ -280,7 +280,8 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                             ($aa0(input, _path + "", true && _exceptionable) ||
                                 $guard(_exceptionable, {
                                     path: _path + "",
-                                    expected: "DynamicJsonValue.JsonArray",
+                                    expected:
+                                        "Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null>",
                                     value: input,
                                 }))) ||
                         ("object" === typeof input &&
@@ -290,13 +291,13 @@ export const test_createRandom_DynamicJsonValue = _test_random(
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string)",
+                                "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string)",
                             value: input,
                         }) ||
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(DynamicJsonValue.JsonArray | DynamicJsonValue.JsonObject | boolean | null | number | string)",
+                                "(Array<string | number | boolean | { [x: string]: string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | number | boolean | ... | (string | ... 4 more ... | null)[] | null)[] | null)[] | null)[] | null | undefined; } | (string | ... 4 more ... | null)[] | null> | __type | boolean | null | number | string)",
                             value: input,
                         }))
                 );

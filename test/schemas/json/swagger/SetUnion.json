@@ -1,26 +1,24 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/SetUnion"
+      "$ref": "#/components/schemas/SetUnion"
     }
   ],
   "components": {
-    "objects": {
-      "Set": {
-        "type": "object",
-        "properties": {},
-        "nullable": false
-      }
-    },
-    "aliases": {
+    "schemas": {
       "SetUnion": {
         "type": "array",
         "items": {
-          "$ref": "#/components/aliases/SetUnion.Union"
+          "$ref": "#/components/schemas/SetUnion.Union"
         }
       },
       "SetUnion.Union": {
         "$ref": "#/components/objects/Set"
+      },
+      "Set": {
+        "type": "object",
+        "properties": {},
+        "nullable": false
       }
     }
   },

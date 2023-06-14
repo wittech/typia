@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/TagPattern"
+      "$ref": "#/components/schemas/TagPattern"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "TagPattern": {
         "type": "object",
         "properties": {

@@ -1,44 +1,34 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TupleRestAtomic"
+      "$ref": "#/components/schemas/TupleRestAtomic"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "TupleRestAtomic": {
-        "$id": "#/components/aliases/TupleRestAtomic",
+        "$id": "#/components/schemas/TupleRestAtomic",
         "type": "array",
-        "items": {
-          "oneOf": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "x-typia-rest": true,
-        "x-typia-tuple": {
-          "type": "array",
-          "items": [
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "x-typia-rest": true
-        }
+        "items": [
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "boolean"
+          },
+          {
+            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "number"
+          },
+          {
+            "x-typia-rest": true,
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string"
+          }
+        ]
       }
     }
   },

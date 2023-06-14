@@ -1,26 +1,24 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/MapUnion"
+      "$ref": "#/components/schemas/MapUnion"
     }
   ],
   "components": {
-    "objects": {
-      "Map": {
-        "type": "object",
-        "properties": {},
-        "nullable": false
-      }
-    },
-    "aliases": {
+    "schemas": {
       "MapUnion": {
         "type": "array",
         "items": {
-          "$ref": "#/components/aliases/MapUnion.Union"
+          "$ref": "#/components/schemas/MapUnion.Union"
         }
       },
       "MapUnion.Union": {
         "$ref": "#/components/objects/Map"
+      },
+      "Map": {
+        "type": "object",
+        "properties": {},
+        "nullable": false
       }
     }
   },

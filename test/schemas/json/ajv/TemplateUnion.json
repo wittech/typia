@@ -1,13 +1,20 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TemplateUnion"
+      "$ref": "#/components/schemas/TemplateUnion"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "TemplateUnion": {
+        "$id": "#/components/schemas/TemplateUnion",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TemplateUnion.Type"
+        }
+      },
       "TemplateUnion.Type": {
-        "$id": "#/components/objects/TemplateUnion.Type",
+        "$id": "#/components/schemas/TemplateUnion.Type",
         "type": "object",
         "properties": {
           "prefix": {
@@ -47,7 +54,7 @@
                 "type": "boolean"
               },
               {
-                "$ref": "#/components/objects/__type"
+                "$ref": "#/components/schemas/__type"
               }
             ],
             "x-typia-required": true,
@@ -63,7 +70,7 @@
         "x-typia-jsDocTags": []
       },
       "__type": {
-        "$id": "#/components/objects/__type",
+        "$id": "#/components/schemas/__type",
         "type": "object",
         "properties": {
           "name": {
@@ -76,15 +83,6 @@
           "name"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "TemplateUnion": {
-        "$id": "#/components/aliases/TemplateUnion",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/TemplateUnion.Type"
-        }
       }
     }
   },

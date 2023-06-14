@@ -1,11 +1,21 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ObjectGenericUnion.ISaleEntireArticle"
+      "$ref": "#/components/schemas/ObjectGenericUnion.ISaleEntireArticle"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ObjectGenericUnion.ISaleEntireArticle": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ObjectGenericUnion.ISaleQuestion"
+          },
+          {
+            "$ref": "#/components/schemas/ObjectGenericUnion.ISaleReview"
+          }
+        ]
+      },
       "ObjectGenericUnion.ISaleQuestion": {
         "type": "object",
         "properties": {
@@ -15,7 +25,7 @@
             "type": "string"
           },
           "answer": {
-            "$ref": "#/components/aliases/ObjectGenericUnion.ISaleAnswer.Nullable"
+            "$ref": "#/components/schemas/ObjectGenericUnion.ISaleAnswer.Nullable"
           },
           "id": {
             "x-typia-required": true,
@@ -32,7 +42,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectGenericUnion.ISaleArticle.IContent"
+              "$ref": "#/components/schemas/ObjectGenericUnion.ISaleArticle.IContent"
             }
           },
           "created_at": {
@@ -52,7 +62,7 @@
         ],
         "x-typia-jsDocTags": []
       },
-      "ObjectGenericUnion.ISaleAnswer": {
+      "ObjectGenericUnion.ISaleAnswer.Nullable": {
         "type": "object",
         "properties": {
           "id": {
@@ -70,7 +80,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectGenericUnion.ISaleArticle.IContent"
+              "$ref": "#/components/schemas/ObjectGenericUnion.ISaleArticle.IContent"
             }
           },
           "created_at": {
@@ -79,7 +89,7 @@
             "type": "string"
           }
         },
-        "nullable": false,
+        "nullable": true,
         "required": [
           "id",
           "hit",
@@ -116,7 +126,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/aliases/Omit_lt_ObjectGenericUnion.IAttachmentFile_comma__space__doublequote_id_doublequote__gt_"
+              "$ref": "#/components/schemas/Omit_lt_ObjectGenericUnion.IAttachmentFile_comma__space__doublequote_id_doublequote__gt_"
             }
           }
         },
@@ -167,7 +177,7 @@
             "type": "string"
           },
           "answer": {
-            "$ref": "#/components/aliases/ObjectGenericUnion.ISaleAnswer.Nullable"
+            "$ref": "#/components/schemas/ObjectGenericUnion.ISaleAnswer.Nullable"
           },
           "id": {
             "x-typia-required": true,
@@ -184,7 +194,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectGenericUnion.ISaleReview.IContent"
+              "$ref": "#/components/schemas/ObjectGenericUnion.ISaleReview.IContent"
             }
           },
           "created_at": {
@@ -237,7 +247,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/aliases/Omit_lt_ObjectGenericUnion.IAttachmentFile_comma__space__doublequote_id_doublequote__gt_"
+              "$ref": "#/components/schemas/Omit_lt_ObjectGenericUnion.IAttachmentFile_comma__space__doublequote_id_doublequote__gt_"
             }
           }
         },
@@ -251,30 +261,6 @@
           "files"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ObjectGenericUnion.ISaleEntireArticle": {
-        "oneOf": [
-          {
-            "$ref": "#/components/aliases/ObjectGenericUnion.ISaleQuestion"
-          },
-          {
-            "$ref": "#/components/aliases/ObjectGenericUnion.ISaleReview"
-          }
-        ]
-      },
-      "ObjectGenericUnion.ISaleQuestion": {
-        "$ref": "#/components/objects/ObjectGenericUnion.ISaleQuestion"
-      },
-      "ObjectGenericUnion.ISaleAnswer.Nullable": {
-        "$ref": "#/components/objects/ObjectGenericUnion.ISaleAnswer"
-      },
-      "Omit_lt_ObjectGenericUnion.IAttachmentFile_comma__space__doublequote_id_doublequote__gt_": {
-        "$ref": "#/components/objects/Omit_lt_ObjectGenericUnion.IAttachmentFile_comma__space__doublequote_id_doublequote__gt_"
-      },
-      "ObjectGenericUnion.ISaleReview": {
-        "$ref": "#/components/objects/ObjectGenericUnion.ISaleReview"
       }
     }
   },

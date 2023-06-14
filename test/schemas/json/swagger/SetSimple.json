@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/SetSimple"
+      "$ref": "#/components/schemas/SetSimple"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "SetSimple": {
         "type": "object",
         "properties": {

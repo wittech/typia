@@ -1,16 +1,15 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayUnion"
+      "$ref": "#/components/schemas/ArrayUnion"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "ArrayUnion": {
         "type": "array",
         "items": {
-          "$ref": "#/components/aliases/ArrayUnion.IUnion"
+          "$ref": "#/components/schemas/ArrayUnion.IUnion"
         }
       },
       "ArrayUnion.IUnion": {

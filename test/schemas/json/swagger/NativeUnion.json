@@ -1,19 +1,24 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/NativeUnion"
+      "$ref": "#/components/schemas/NativeUnion"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "NativeUnion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/NativeUnion.Union"
+        }
+      },
       "NativeUnion.Union": {
         "type": "object",
         "properties": {
           "date": {
             "x-typia-required": true,
             "x-typia-optional": false,
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "unsigned": {
             "oneOf": [
@@ -91,6 +96,9 @@
           "buffer": {
             "oneOf": [
               {
+                "$ref": "#/components/schemas/__type"
+              },
+              {
                 "x-typia-required": true,
                 "x-typia-optional": false,
                 "$ref": "#/components/objects/ArrayBuffer"
@@ -104,9 +112,6 @@
                 "x-typia-required": true,
                 "x-typia-optional": false,
                 "$ref": "#/components/objects/DataView"
-              },
-              {
-                "$ref": "#/components/objects/__type"
               }
             ],
             "x-typia-required": true,
@@ -195,21 +200,6 @@
         "properties": {},
         "nullable": false
       },
-      "ArrayBuffer": {
-        "type": "object",
-        "properties": {},
-        "nullable": false
-      },
-      "SharedArrayBuffer": {
-        "type": "object",
-        "properties": {},
-        "nullable": false
-      },
-      "DataView": {
-        "type": "object",
-        "properties": {},
-        "nullable": false
-      },
       "__type": {
         "type": "object",
         "properties": {
@@ -239,6 +229,21 @@
         ],
         "x-typia-jsDocTags": []
       },
+      "ArrayBuffer": {
+        "type": "object",
+        "properties": {},
+        "nullable": false
+      },
+      "SharedArrayBuffer": {
+        "type": "object",
+        "properties": {},
+        "nullable": false
+      },
+      "DataView": {
+        "type": "object",
+        "properties": {},
+        "nullable": false
+      },
       "WeakSet": {
         "type": "object",
         "properties": {},
@@ -248,14 +253,6 @@
         "type": "object",
         "properties": {},
         "nullable": false
-      }
-    },
-    "aliases": {
-      "NativeUnion": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/NativeUnion.Union"
-        }
       }
     }
   },

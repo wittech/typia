@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/DynamicTemplate"
+      "$ref": "#/components/schemas/DynamicTemplate"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "DynamicTemplate": {
         "type": "object",
         "properties": {},

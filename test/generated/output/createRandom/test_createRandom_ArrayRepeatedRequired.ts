@@ -91,14 +91,14 @@ export const test_createRandom_ArrayRepeatedRequired = _test_random(
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index1 + "]",
                                     expected:
-                                        "(Array<ArrayRepeatedRequired> | number | string)",
+                                        "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                                     value: elem,
                                 })) &&
                             (undefined !== elem ||
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index1 + "]",
                                     expected:
-                                        "(Array<ArrayRepeatedRequired> | number | string)",
+                                        "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                                     value: elem,
                                 })) &&
                             ("string" === typeof elem ||
@@ -108,7 +108,7 @@ export const test_createRandom_ArrayRepeatedRequired = _test_random(
                                     $guard(_exceptionable, {
                                         path: _path + "[" + _index1 + "]",
                                         expected:
-                                            "(Array<ArrayRepeatedRequired> | number | string)",
+                                            "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                                         value: elem,
                                     })) &&
                                     ($aa0(
@@ -119,13 +119,13 @@ export const test_createRandom_ArrayRepeatedRequired = _test_random(
                                         $guard(_exceptionable, {
                                             path: _path + "[" + _index1 + "]",
                                             expected:
-                                                "Array<ArrayRepeatedRequired>",
+                                                "Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]>",
                                             value: elem,
                                         }))) ||
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index1 + "]",
                                     expected:
-                                        "(Array<ArrayRepeatedRequired> | number | string)",
+                                        "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                                     value: elem,
                                 })),
                     );
@@ -134,14 +134,14 @@ export const test_createRandom_ArrayRepeatedRequired = _test_random(
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(Array<ArrayRepeatedRequired> | number | string)",
+                                "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                             value: input,
                         })) &&
                     (undefined !== input ||
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(Array<ArrayRepeatedRequired> | number | string)",
+                                "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                             value: input,
                         })) &&
                     ("string" === typeof input ||
@@ -150,19 +150,20 @@ export const test_createRandom_ArrayRepeatedRequired = _test_random(
                             $guard(true, {
                                 path: _path + "",
                                 expected:
-                                    "(Array<ArrayRepeatedRequired> | number | string)",
+                                    "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                                 value: input,
                             })) &&
                             ($aa0(input, _path + "", true && _exceptionable) ||
                                 $guard(_exceptionable, {
                                     path: _path + "",
-                                    expected: "Array<ArrayRepeatedRequired>",
+                                    expected:
+                                        "Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]>",
                                     value: input,
                                 }))) ||
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(Array<ArrayRepeatedRequired> | number | string)",
+                                "(Array<string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | number | (string | ... 1 more ... | (string | ... 1 more ... | (string | ... 1 more ... | ...)[])[])[])[])[])[])[])[])[])[])[]> | number | string)",
                             value: input,
                         }))
                 );

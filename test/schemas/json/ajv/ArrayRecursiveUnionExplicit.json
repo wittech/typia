@@ -1,13 +1,40 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit"
+      "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ArrayRecursiveUnionExplicit": {
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket"
+        }
+      },
+      "ArrayRecursiveUnionExplicit.IBucket": {
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket",
+        "oneOf": [
+          {
+            "$recursiveRef": "#/components/schemas/ArrayRecursiveUnionExplicit.IDirectory"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IImageFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.ITextFile"
+          },
+          {
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IZipFile"
+          },
+          {
+            "$recursiveRef": "#/components/schemas/ArrayRecursiveUnionExplicit.IShortcut"
+          }
+        ]
+      },
       "ArrayRecursiveUnionExplicit.IDirectory": {
-        "$id": "#/components/objects/ArrayRecursiveUnionExplicit.IDirectory",
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit.IDirectory",
         "$recursiveAnchor": true,
         "type": "object",
         "properties": {
@@ -31,7 +58,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket"
+              "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket"
             }
           },
           "type": {
@@ -53,7 +80,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionExplicit.IImageFile": {
-        "$id": "#/components/objects/ArrayRecursiveUnionExplicit.IImageFile",
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit.IImageFile",
         "type": "object",
         "properties": {
           "id": {
@@ -122,7 +149,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionExplicit.ITextFile": {
-        "$id": "#/components/objects/ArrayRecursiveUnionExplicit.ITextFile",
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit.ITextFile",
         "type": "object",
         "properties": {
           "id": {
@@ -179,7 +206,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionExplicit.IZipFile": {
-        "$id": "#/components/objects/ArrayRecursiveUnionExplicit.IZipFile",
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit.IZipFile",
         "type": "object",
         "properties": {
           "id": {
@@ -236,7 +263,7 @@
         "x-typia-jsDocTags": []
       },
       "ArrayRecursiveUnionExplicit.IShortcut": {
-        "$id": "#/components/objects/ArrayRecursiveUnionExplicit.IShortcut",
+        "$id": "#/components/schemas/ArrayRecursiveUnionExplicit.IShortcut",
         "$recursiveAnchor": true,
         "type": "object",
         "properties": {
@@ -256,7 +283,7 @@
             "type": "string"
           },
           "target": {
-            "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket"
+            "$ref": "#/components/schemas/ArrayRecursiveUnionExplicit.IBucket"
           },
           "type": {
             "x-typia-required": true,
@@ -284,35 +311,6 @@
           "extension"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ArrayRecursiveUnionExplicit": {
-        "$id": "#/components/aliases/ArrayRecursiveUnionExplicit",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket"
-        }
-      },
-      "ArrayRecursiveUnionExplicit.IBucket": {
-        "$id": "#/components/aliases/ArrayRecursiveUnionExplicit.IBucket",
-        "oneOf": [
-          {
-            "$recursiveRef": "#/components/objects/ArrayRecursiveUnionExplicit.IDirectory"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.IImageFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.ITextFile"
-          },
-          {
-            "$ref": "#/components/objects/ArrayRecursiveUnionExplicit.IZipFile"
-          },
-          {
-            "$recursiveRef": "#/components/objects/ArrayRecursiveUnionExplicit.IShortcut"
-          }
-        ]
       }
     }
   },

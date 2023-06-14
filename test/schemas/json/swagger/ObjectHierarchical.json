@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ObjectHierarchical.ICustomer"
+      "$ref": "#/components/schemas/ObjectHierarchical.ICustomer"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectHierarchical.ICustomer": {
         "type": "object",
         "properties": {
@@ -15,13 +15,13 @@
             "type": "number"
           },
           "channel": {
-            "$ref": "#/components/objects/ObjectHierarchical.IChannel"
+            "$ref": "#/components/schemas/ObjectHierarchical.IChannel"
           },
           "member": {
-            "$ref": "#/components/objects/ObjectHierarchical.IMember.Nullable"
+            "$ref": "#/components/schemas/ObjectHierarchical.IMember.Nullable"
           },
           "account": {
-            "$ref": "#/components/objects/ObjectHierarchical.IAccount.Nullable"
+            "$ref": "#/components/schemas/ObjectHierarchical.IAccount.Nullable"
           },
           "href": {
             "x-typia-required": true,
@@ -34,46 +34,48 @@
             "type": "string"
           },
           "ip": {
-            "x-typia-required": true,
-            "x-typia-optional": false,
             "type": "array",
             "items": {
               "x-typia-required": true,
               "x-typia-optional": false,
               "type": "number"
             },
-            "x-typia-rest": false,
+            "x-typia-required": true,
+            "x-typia-optional": false,
             "x-typia-tuple": {
-              "x-typia-required": true,
-              "x-typia-optional": false,
               "type": "array",
               "items": [
                 {
                   "x-typia-required": true,
                   "x-typia-optional": false,
+                  "x-typia-rest": false,
                   "type": "number"
                 },
                 {
                   "x-typia-required": true,
                   "x-typia-optional": false,
+                  "x-typia-rest": false,
                   "type": "number"
                 },
                 {
                   "x-typia-required": true,
                   "x-typia-optional": false,
+                  "x-typia-rest": false,
                   "type": "number"
                 },
                 {
                   "x-typia-required": true,
                   "x-typia-optional": false,
+                  "x-typia-rest": false,
                   "type": "number"
                 }
               ],
-              "x-typia-rest": false
+              "x-typia-required": true,
+              "x-typia-optional": false
             }
           },
           "created_at": {
-            "$ref": "#/components/objects/ObjectHierarchical.ITimestamp"
+            "$ref": "#/components/schemas/ObjectHierarchical.ITimestamp"
           }
         },
         "nullable": false,
@@ -123,7 +125,7 @@
             "type": "number"
           },
           "created_at": {
-            "$ref": "#/components/objects/ObjectHierarchical.ITimestamp"
+            "$ref": "#/components/schemas/ObjectHierarchical.ITimestamp"
           }
         },
         "nullable": false,
@@ -168,10 +170,10 @@
             "type": "number"
           },
           "account": {
-            "$ref": "#/components/objects/ObjectHierarchical.IAccount"
+            "$ref": "#/components/schemas/ObjectHierarchical.IAccount"
           },
           "enterprise": {
-            "$ref": "#/components/objects/ObjectHierarchical.IEnterprise.Nullable"
+            "$ref": "#/components/schemas/ObjectHierarchical.IEnterprise.Nullable"
           },
           "emails": {
             "x-typia-required": true,
@@ -184,7 +186,7 @@
             }
           },
           "created_at": {
-            "$ref": "#/components/objects/ObjectHierarchical.ITimestamp"
+            "$ref": "#/components/schemas/ObjectHierarchical.ITimestamp"
           },
           "authorized": {
             "x-typia-required": true,
@@ -217,7 +219,7 @@
             "type": "string"
           },
           "created_at": {
-            "$ref": "#/components/objects/ObjectHierarchical.ITimestamp"
+            "$ref": "#/components/schemas/ObjectHierarchical.ITimestamp"
           }
         },
         "nullable": false,
@@ -237,7 +239,7 @@
             "type": "number"
           },
           "account": {
-            "$ref": "#/components/objects/ObjectHierarchical.IAccount"
+            "$ref": "#/components/schemas/ObjectHierarchical.IAccount"
           },
           "name": {
             "x-typia-required": true,
@@ -250,7 +252,7 @@
             "type": "number"
           },
           "created_at": {
-            "$ref": "#/components/objects/ObjectHierarchical.ITimestamp"
+            "$ref": "#/components/schemas/ObjectHierarchical.ITimestamp"
           }
         },
         "nullable": true,
@@ -277,7 +279,7 @@
             "type": "string"
           },
           "created_at": {
-            "$ref": "#/components/objects/ObjectHierarchical.ITimestamp"
+            "$ref": "#/components/schemas/ObjectHierarchical.ITimestamp"
           }
         },
         "nullable": true,

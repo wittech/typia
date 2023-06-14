@@ -1,25 +1,53 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayRepeatedUnion"
+      "$ref": "#/components/schemas/ArrayRepeatedUnion"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ArrayRepeatedUnion": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArrayRepeatedUnion"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArrayRepeatedUnion.IBox3D"
+            }
+          }
+        ]
+      },
       "ArrayRepeatedUnion.IBox3D": {
         "type": "object",
         "properties": {
           "scale": {
-            "$ref": "#/components/objects/ArrayRepeatedUnion.IPoint3D"
+            "$ref": "#/components/schemas/ArrayRepeatedUnion.IPoint3D"
           },
           "position": {
-            "$ref": "#/components/objects/ArrayRepeatedUnion.IPoint3D"
+            "$ref": "#/components/schemas/ArrayRepeatedUnion.IPoint3D"
           },
           "rotate": {
-            "$ref": "#/components/objects/ArrayRepeatedUnion.IPoint3D"
+            "$ref": "#/components/schemas/ArrayRepeatedUnion.IPoint3D"
           },
           "pivot": {
-            "$ref": "#/components/objects/ArrayRepeatedUnion.IPoint3D"
+            "$ref": "#/components/schemas/ArrayRepeatedUnion.IPoint3D"
           }
         },
         "nullable": false,
@@ -57,41 +85,6 @@
           "z"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ArrayRepeatedUnion": {
-        "oneOf": [
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "$ref": "#/components/arrays/Array_lt_ArrayRepeatedUnion_gt_"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/objects/ArrayRepeatedUnion.IBox3D"
-            }
-          }
-        ]
-      }
-    },
-    "arrays": {
-      "Array_lt_ArrayRepeatedUnion_gt_": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/aliases/ArrayRepeatedUnion"
-        }
       }
     }
   },

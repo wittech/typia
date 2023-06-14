@@ -1,13 +1,13 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/DynamicConstant"
+      "$ref": "#/components/schemas/DynamicConstant"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "DynamicConstant": {
-        "$id": "#/components/objects/DynamicConstant",
+        "$id": "#/components/schemas/DynamicConstant",
         "type": "object",
         "properties": {
           "a": {
@@ -38,12 +38,6 @@
           "d"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "DynamicConstant": {
-        "$id": "#/components/aliases/DynamicConstant",
-        "$ref": "#/components/objects/DynamicConstant"
       }
     }
   },

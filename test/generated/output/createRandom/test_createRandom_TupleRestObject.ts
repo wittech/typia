@@ -65,7 +65,8 @@ export const test_createRandom_TupleRestObject = _test_random(
                     ((Array.isArray(input) ||
                         $guard(true, {
                             path: _path + "",
-                            expected: "Array<number | boolean | IObject>",
+                            expected:
+                                "Array<number | boolean | { value: string; }>",
                             value: input,
                         })) &&
                         input.every(
@@ -73,15 +74,13 @@ export const test_createRandom_TupleRestObject = _test_random(
                                 (null !== elem ||
                                     $guard(true, {
                                         path: _path + "[" + _index1 + "]",
-                                        expected:
-                                            "(TupleRestObject.IObject | boolean | number)",
+                                        expected: "(__type | boolean | number)",
                                         value: elem,
                                     })) &&
                                 (undefined !== elem ||
                                     $guard(true, {
                                         path: _path + "[" + _index1 + "]",
-                                        expected:
-                                            "(TupleRestObject.IObject | boolean | number)",
+                                        expected: "(__type | boolean | number)",
                                         value: elem,
                                     })) &&
                                 (("number" === typeof elem &&
@@ -92,7 +91,7 @@ export const test_createRandom_TupleRestObject = _test_random(
                                         $guard(true, {
                                             path: _path + "[" + _index1 + "]",
                                             expected:
-                                                "(TupleRestObject.IObject | boolean | number)",
+                                                "(__type | boolean | number)",
                                             value: elem,
                                         })) &&
                                         $ao0(
@@ -102,14 +101,14 @@ export const test_createRandom_TupleRestObject = _test_random(
                                         )) ||
                                     $guard(true, {
                                         path: _path + "[" + _index1 + "]",
-                                        expected:
-                                            "(TupleRestObject.IObject | boolean | number)",
+                                        expected: "(__type | boolean | number)",
                                         value: elem,
                                     })),
                         )) ||
                     $guard(true, {
                         path: _path + "",
-                        expected: "Array<number | boolean | IObject>",
+                        expected:
+                            "Array<number | boolean | { value: string; }>",
                         value: input,
                     })
                 );

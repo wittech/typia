@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ObjectLiteralProperty.ISomething"
+      "$ref": "#/components/schemas/ObjectLiteralProperty.ISomething"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectLiteralProperty.ISomething": {
         "type": "object",
         "properties": {

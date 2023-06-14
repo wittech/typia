@@ -1,11 +1,42 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ObjectUnionComposite"
+      "$ref": "#/components/schemas/ObjectUnionComposite"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "ObjectUnionComposite": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.ILine"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.ITriangle"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.IRectangle"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPolyline"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPointedShape"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPolygon"
+            },
+            {
+              "$ref": "#/components/schemas/ObjectUnionComposite.ICircle"
+            }
+          ]
+        }
+      },
       "ObjectUnionComposite.IPoint": {
         "type": "object",
         "properties": {
@@ -31,10 +62,10 @@
         "type": "object",
         "properties": {
           "p1": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "p2": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           }
         },
         "nullable": false,
@@ -48,13 +79,13 @@
         "type": "object",
         "properties": {
           "p1": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "p2": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "p3": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           }
         },
         "nullable": false,
@@ -69,16 +100,16 @@
         "type": "object",
         "properties": {
           "p1": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "p2": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "p3": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "p4": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           }
         },
         "nullable": false,
@@ -98,7 +129,7 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
             }
           }
         },
@@ -116,11 +147,11 @@
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
             }
           },
           "inner": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           }
         },
         "nullable": false,
@@ -134,14 +165,14 @@
         "type": "object",
         "properties": {
           "outer": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPolyline"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPolyline"
           },
           "inner": {
             "x-typia-required": true,
             "x-typia-optional": false,
             "type": "array",
             "items": {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPolyline"
+              "$ref": "#/components/schemas/ObjectUnionComposite.IPolyline"
             }
           }
         },
@@ -156,7 +187,7 @@
         "type": "object",
         "properties": {
           "centroid": {
-            "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
+            "$ref": "#/components/schemas/ObjectUnionComposite.IPoint"
           },
           "radius": {
             "x-typia-required": true,
@@ -170,39 +201,6 @@
           "radius"
         ],
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "ObjectUnionComposite": {
-        "type": "array",
-        "items": {
-          "oneOf": [
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPoint"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.ILine"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.ITriangle"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.IRectangle"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPolyline"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPointedShape"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.IPolygon"
-            },
-            {
-              "$ref": "#/components/objects/ObjectUnionComposite.ICircle"
-            }
-          ]
-        }
       }
     }
   },

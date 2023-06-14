@@ -1,42 +1,39 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayAtomicAlias"
+      "$ref": "#/components/schemas/ArrayAtomicAlias"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "ArrayAtomicAlias": {
         "type": "array",
         "items": {
           "oneOf": [
             {
-              "$ref": "#/components/aliases/ArrayAtomicAlias.Alias_lt_boolean_gt_"
+              "$ref": "#/components/schemas/ArrayAtomicAlias.Alias_lt_boolean_gt_"
             },
             {
-              "$ref": "#/components/aliases/ArrayAtomicAlias.Alias_lt_number_gt_"
+              "$ref": "#/components/schemas/ArrayAtomicAlias.Alias_lt_number_gt_"
             },
             {
-              "$ref": "#/components/aliases/ArrayAtomicAlias.Alias_lt_string_gt_"
+              "$ref": "#/components/schemas/ArrayAtomicAlias.Alias_lt_string_gt_"
             }
           ]
         },
-        "x-typia-rest": false,
         "x-typia-tuple": {
           "type": "array",
           "items": [
             {
-              "$ref": "#/components/aliases/ArrayAtomicAlias.Alias_lt_boolean_gt_"
+              "$ref": "#/components/schemas/ArrayAtomicAlias.Alias_lt_boolean_gt_"
             },
             {
-              "$ref": "#/components/aliases/ArrayAtomicAlias.Alias_lt_number_gt_"
+              "$ref": "#/components/schemas/ArrayAtomicAlias.Alias_lt_number_gt_"
             },
             {
-              "$ref": "#/components/aliases/ArrayAtomicAlias.Alias_lt_string_gt_"
+              "$ref": "#/components/schemas/ArrayAtomicAlias.Alias_lt_string_gt_"
             }
-          ],
-          "x-typia-rest": false
+          ]
         }
       },
       "ArrayAtomicAlias.Alias_lt_boolean_gt_": {

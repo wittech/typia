@@ -1,11 +1,17 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TagAtomicUnion"
+      "$ref": "#/components/schemas/TagAtomicUnion"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "TagAtomicUnion": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TagAtomicUnion.Type"
+        }
+      },
       "TagAtomicUnion.Type": {
         "type": "object",
         "properties": {
@@ -167,14 +173,6 @@
         ],
         "description": "@minimum 3\n@minLength 3\n@maxLength 7",
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "TagAtomicUnion": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/TagAtomicUnion.Type"
-        }
       }
     }
   },

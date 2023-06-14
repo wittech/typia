@@ -1,12 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ToJsonAtomicUnion"
+      "$ref": "#/components/schemas/ToJsonAtomicUnion"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "ToJsonAtomicUnion": {
         "type": "array",
         "items": {

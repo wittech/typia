@@ -1,35 +1,15 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ConstantAtomicUnion"
+      "$ref": "#/components/schemas/ConstantAtomicUnion"
     }
   ],
   "components": {
-    "objects": {
-      "__type": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "x-typia-required": true,
-            "x-typia-optional": false,
-            "type": "string",
-            "enum": [
-              "key"
-            ]
-          }
-        },
-        "nullable": false,
-        "required": [
-          "key"
-        ],
-        "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
+    "schemas": {
       "ConstantAtomicUnion": {
         "type": "array",
         "items": {
-          "$ref": "#/components/aliases/ConstantAtomicUnion.Union"
+          "$ref": "#/components/schemas/ConstantAtomicUnion.Union"
         }
       },
       "ConstantAtomicUnion.Union": {
@@ -55,9 +35,27 @@
             ]
           },
           {
-            "$ref": "#/components/objects/__type"
+            "$ref": "#/components/schemas/__type"
           }
         ]
+      },
+      "__type": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "x-typia-required": true,
+            "x-typia-optional": false,
+            "type": "string",
+            "enum": [
+              "key"
+            ]
+          }
+        },
+        "nullable": false,
+        "required": [
+          "key"
+        ],
+        "x-typia-jsDocTags": []
       }
     }
   },

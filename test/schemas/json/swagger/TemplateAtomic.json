@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/TemplateAtomic"
+      "$ref": "#/components/schemas/TemplateAtomic"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "TemplateAtomic": {
         "type": "object",
         "properties": {

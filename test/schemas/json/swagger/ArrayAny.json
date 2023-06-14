@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ArrayAny"
+      "$ref": "#/components/schemas/ArrayAny"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ArrayAny": {
         "type": "object",
         "properties": {

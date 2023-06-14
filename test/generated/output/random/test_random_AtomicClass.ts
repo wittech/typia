@@ -66,23 +66,17 @@ export const test_random_AtomicClass = _test_random(
                 Array.isArray(input) &&
                 input.length === 9 &&
                 "boolean" === typeof input[0] &&
-                ("boolean" === typeof input[1] ||
-                    input[1] instanceof Boolean) &&
-                null !== input[2] &&
-                undefined !== input[2] &&
-                ("boolean" === typeof input[2] ||
-                    input[2] instanceof Boolean) &&
+                "boolean" === typeof input[1] &&
+                "boolean" === typeof input[2] &&
                 "number" === typeof input[3] &&
                 Number.isFinite(input[3]) &&
-                ("number" === typeof input[4] || input[4] instanceof Number) &&
-                null !== input[5] &&
-                undefined !== input[5] &&
-                ("number" === typeof input[5] || input[5] instanceof Number) &&
+                "number" === typeof input[4] &&
+                Number.isFinite(input[4]) &&
+                "number" === typeof input[5] &&
+                Number.isFinite(input[5]) &&
                 "string" === typeof input[6] &&
-                ("string" === typeof input[7] || input[7] instanceof String) &&
-                null !== input[8] &&
-                undefined !== input[8] &&
-                ("string" === typeof input[8] || input[8] instanceof String)
+                "string" === typeof input[7] &&
+                "string" === typeof input[8]
             );
         };
         if (false === __is(input))
@@ -97,14 +91,14 @@ export const test_random_AtomicClass = _test_random(
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                '[boolean, false | Boolean, boolean | Boolean, number, Number | 1, number | Number, string, String | "characters", string | String]',
+                                "[boolean, boolean, boolean, number, number, number, string, string, string]",
                             value: input,
                         })) &&
                         (input.length === 9 ||
                             $guard(true, {
                                 path: _path + "",
                                 expected:
-                                    '[boolean, (Boolean | false), (Boolean | boolean), number, (1 | Number), (Number | number), string, ("characters" | String), (String | string)]',
+                                    "[boolean, boolean, boolean, number, number, number, string, string, string]",
                                 value: input,
                             })) &&
                         ("boolean" === typeof input[0] ||
@@ -114,29 +108,15 @@ export const test_random_AtomicClass = _test_random(
                                 value: input[0],
                             })) &&
                         ("boolean" === typeof input[1] ||
-                            input[1] instanceof Boolean ||
                             $guard(true, {
                                 path: _path + "[1]",
-                                expected: "(Boolean | false)",
+                                expected: "boolean",
                                 value: input[1],
                             })) &&
-                        (null !== input[2] ||
-                            $guard(true, {
-                                path: _path + "[2]",
-                                expected: "(Boolean | boolean)",
-                                value: input[2],
-                            })) &&
-                        (undefined !== input[2] ||
-                            $guard(true, {
-                                path: _path + "[2]",
-                                expected: "(Boolean | boolean)",
-                                value: input[2],
-                            })) &&
                         ("boolean" === typeof input[2] ||
-                            input[2] instanceof Boolean ||
                             $guard(true, {
                                 path: _path + "[2]",
-                                expected: "(Boolean | boolean)",
+                                expected: "boolean",
                                 value: input[2],
                             })) &&
                         (("number" === typeof input[3] &&
@@ -146,30 +126,18 @@ export const test_random_AtomicClass = _test_random(
                                 expected: "number",
                                 value: input[3],
                             })) &&
-                        ("number" === typeof input[4] ||
-                            input[4] instanceof Number ||
+                        (("number" === typeof input[4] &&
+                            Number.isFinite(input[4])) ||
                             $guard(true, {
                                 path: _path + "[4]",
-                                expected: "(1 | Number)",
+                                expected: "number",
                                 value: input[4],
                             })) &&
-                        (null !== input[5] ||
+                        (("number" === typeof input[5] &&
+                            Number.isFinite(input[5])) ||
                             $guard(true, {
                                 path: _path + "[5]",
-                                expected: "(Number | number)",
-                                value: input[5],
-                            })) &&
-                        (undefined !== input[5] ||
-                            $guard(true, {
-                                path: _path + "[5]",
-                                expected: "(Number | number)",
-                                value: input[5],
-                            })) &&
-                        ("number" === typeof input[5] ||
-                            input[5] instanceof Number ||
-                            $guard(true, {
-                                path: _path + "[5]",
-                                expected: "(Number | number)",
+                                expected: "number",
                                 value: input[5],
                             })) &&
                         ("string" === typeof input[6] ||
@@ -179,35 +147,21 @@ export const test_random_AtomicClass = _test_random(
                                 value: input[6],
                             })) &&
                         ("string" === typeof input[7] ||
-                            input[7] instanceof String ||
                             $guard(true, {
                                 path: _path + "[7]",
-                                expected: '("characters" | String)',
+                                expected: "string",
                                 value: input[7],
                             })) &&
-                        (null !== input[8] ||
-                            $guard(true, {
-                                path: _path + "[8]",
-                                expected: "(String | string)",
-                                value: input[8],
-                            })) &&
-                        (undefined !== input[8] ||
-                            $guard(true, {
-                                path: _path + "[8]",
-                                expected: "(String | string)",
-                                value: input[8],
-                            })) &&
                         ("string" === typeof input[8] ||
-                            input[8] instanceof String ||
                             $guard(true, {
                                 path: _path + "[8]",
-                                expected: "(String | string)",
+                                expected: "string",
                                 value: input[8],
                             }))) ||
                     $guard(true, {
                         path: _path + "",
                         expected:
-                            '[boolean, false | Boolean, boolean | Boolean, number, Number | 1, number | Number, string, String | "characters", string | String]',
+                            "[boolean, boolean, boolean, number, number, number, string, string, string]",
                         value: input,
                     })
                 );

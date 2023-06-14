@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/DynamicUndefined"
+      "$ref": "#/components/schemas/DynamicUndefined"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "DynamicUndefined": {
         "type": "object",
         "properties": {},

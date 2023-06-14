@@ -254,14 +254,15 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                                             $guard(_exceptionable, {
                                                 path: _path + "[0]",
                                                 expected:
-                                                    "Array<string> | Array<ArrayRepeatedUnion> | Array<ArrayRepeatedUnion.IBox3D>",
+                                                    "Array<string> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<__type>",
                                                 value: top,
                                             })))),
                             (entire: any[]): any =>
                                 $aa0(entire, _path, true && _exceptionable) ||
                                 $guard(_exceptionable, {
                                     path: _path,
-                                    expected: "Array<ArrayRepeatedUnion>",
+                                    expected:
+                                        "Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]>",
                                     value: entire,
                                 }),
                         ],
@@ -282,8 +283,7 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                                             $guard(_exceptionable, {
                                                 path:
                                                     _path + "[" + _index2 + "]",
-                                                expected:
-                                                    "ArrayRepeatedUnion.IBox3D",
+                                                expected: "__type",
                                                 value: elem,
                                             })) &&
                                             $ao0(
@@ -293,8 +293,7 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                                             )) ||
                                         $guard(_exceptionable, {
                                             path: _path + "[" + _index2 + "]",
-                                            expected:
-                                                "ArrayRepeatedUnion.IBox3D",
+                                            expected: "__type",
                                             value: elem,
                                         }),
                                 ),
@@ -315,7 +314,7 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                     return $guard(_exceptionable, {
                         path: _path,
                         expected:
-                            "(Array<string> | Array<ArrayRepeatedUnion> | Array<ArrayRepeatedUnion.IBox3D>)",
+                            "(Array<string> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<__type>)",
                         value: input,
                     });
                 };
@@ -328,7 +327,7 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                         null !== input.scale) ||
                         $guard(_exceptionable, {
                             path: _path + ".scale",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.scale,
                         })) &&
                         $ao1(
@@ -338,14 +337,14 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                         )) ||
                         $guard(_exceptionable, {
                             path: _path + ".scale",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.scale,
                         })) &&
                     (((("object" === typeof input.position &&
                         null !== input.position) ||
                         $guard(_exceptionable, {
                             path: _path + ".position",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.position,
                         })) &&
                         $ao1(
@@ -355,14 +354,14 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                         )) ||
                         $guard(_exceptionable, {
                             path: _path + ".position",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.position,
                         })) &&
                     (((("object" === typeof input.rotate &&
                         null !== input.rotate) ||
                         $guard(_exceptionable, {
                             path: _path + ".rotate",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.rotate,
                         })) &&
                         $ao1(
@@ -372,14 +371,14 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                         )) ||
                         $guard(_exceptionable, {
                             path: _path + ".rotate",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.rotate,
                         })) &&
                     (((("object" === typeof input.pivot &&
                         null !== input.pivot) ||
                         $guard(_exceptionable, {
                             path: _path + ".pivot",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.pivot,
                         })) &&
                         $ao1(
@@ -389,7 +388,7 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                         )) ||
                         $guard(_exceptionable, {
                             path: _path + ".pivot",
-                            expected: "ArrayRepeatedUnion.IPoint3D",
+                            expected: "__type.o1",
                             value: input.pivot,
                         }));
                 const $ao1 = (
@@ -429,14 +428,14 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index3 + "]",
                                     expected:
-                                        "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                        "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                                     value: elem,
                                 })) &&
                             (undefined !== elem ||
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index3 + "]",
                                     expected:
-                                        "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                        "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                                     value: elem,
                                 })) &&
                             (("number" === typeof elem &&
@@ -446,7 +445,7 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                                     $guard(_exceptionable, {
                                         path: _path + "[" + _index3 + "]",
                                         expected:
-                                            "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                            "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                                         value: elem,
                                     })) &&
                                     ($ap0(
@@ -457,13 +456,13 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                                         $guard(_exceptionable, {
                                             path: _path + "[" + _index3 + "]",
                                             expected:
-                                                "Array<string> | Array<ArrayRepeatedUnion> | Array<ArrayRepeatedUnion.IBox3D>",
+                                                "Array<string> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<__type>",
                                             value: elem,
                                         }))) ||
                                 $guard(_exceptionable, {
                                     path: _path + "[" + _index3 + "]",
                                     expected:
-                                        "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                        "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                                     value: elem,
                                 })),
                     );
@@ -472,14 +471,14 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                             value: input,
                         })) &&
                     (undefined !== input ||
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                             value: input,
                         })) &&
                     (("number" === typeof input && Number.isFinite(input)) ||
@@ -488,20 +487,20 @@ export const test_createRandom_ArrayRepeatedUnion = _test_random(
                             $guard(true, {
                                 path: _path + "",
                                 expected:
-                                    "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                    "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                                 value: input,
                             })) &&
                             ($ap0(input, _path + "", true && _exceptionable) ||
                                 $guard(_exceptionable, {
                                     path: _path + "",
                                     expected:
-                                        "Array<string> | Array<ArrayRepeatedUnion> | Array<ArrayRepeatedUnion.IBox3D>",
+                                        "Array<string> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<__type>",
                                     value: input,
                                 }))) ||
                         $guard(true, {
                             path: _path + "",
                             expected:
-                                "(Array<ArrayRepeatedUnion.IBox3D> | Array<ArrayRepeatedUnion> | Array<string> | boolean | number)",
+                                "(Array<__type> | Array<number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | boolean | string[] | (number | ... 3 more ... | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[])[] | { ...; }[]> | Array<string> | boolean | number)",
                             value: input,
                         }))
                 );

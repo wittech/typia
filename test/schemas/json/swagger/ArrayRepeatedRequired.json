@@ -1,12 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/ArrayRepeatedRequired"
+      "$ref": "#/components/schemas/ArrayRepeatedRequired"
     }
   ],
   "components": {
-    "objects": {},
-    "aliases": {
+    "schemas": {
       "ArrayRepeatedRequired": {
         "oneOf": [
           {
@@ -16,17 +15,12 @@
             "type": "number"
           },
           {
-            "$ref": "#/components/arrays/Array_lt_ArrayRepeatedRequired_gt_"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArrayRepeatedRequired"
+            }
           }
         ]
-      }
-    },
-    "arrays": {
-      "Array_lt_ArrayRepeatedRequired_gt_": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/aliases/ArrayRepeatedRequired"
-        }
       }
     }
   },

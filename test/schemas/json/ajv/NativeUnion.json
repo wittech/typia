@@ -1,13 +1,20 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/NativeUnion"
+      "$ref": "#/components/schemas/NativeUnion"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "NativeUnion": {
+        "$id": "#/components/schemas/NativeUnion",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/NativeUnion.Union"
+        }
+      },
       "NativeUnion.Union": {
-        "$id": "#/components/objects/NativeUnion.Union",
+        "$id": "#/components/schemas/NativeUnion.Union",
         "type": "object",
         "properties": {
           "date": {
@@ -102,6 +109,9 @@
           "buffer": {
             "oneOf": [
               {
+                "$ref": "#/components/schemas/__type"
+              },
+              {
                 "x-typia-required": true,
                 "x-typia-optional": false,
                 "$ref": "#/components/objects/ArrayBuffer"
@@ -115,9 +125,6 @@
                 "x-typia-required": true,
                 "x-typia-optional": false,
                 "$ref": "#/components/objects/DataView"
-              },
-              {
-                "$ref": "#/components/objects/__type"
               }
             ],
             "x-typia-required": true,
@@ -205,23 +212,8 @@
         "$id": "#/components/objects/Float64Array",
         "properties": {}
       },
-      "ArrayBuffer": {
-        "type": "object",
-        "$id": "#/components/objects/ArrayBuffer",
-        "properties": {}
-      },
-      "SharedArrayBuffer": {
-        "type": "object",
-        "$id": "#/components/objects/SharedArrayBuffer",
-        "properties": {}
-      },
-      "DataView": {
-        "type": "object",
-        "$id": "#/components/objects/DataView",
-        "properties": {}
-      },
       "__type": {
-        "$id": "#/components/objects/__type",
+        "$id": "#/components/schemas/__type",
         "type": "object",
         "properties": {
           "type": {
@@ -249,6 +241,21 @@
         ],
         "x-typia-jsDocTags": []
       },
+      "ArrayBuffer": {
+        "type": "object",
+        "$id": "#/components/objects/ArrayBuffer",
+        "properties": {}
+      },
+      "SharedArrayBuffer": {
+        "type": "object",
+        "$id": "#/components/objects/SharedArrayBuffer",
+        "properties": {}
+      },
+      "DataView": {
+        "type": "object",
+        "$id": "#/components/objects/DataView",
+        "properties": {}
+      },
       "WeakSet": {
         "type": "object",
         "$id": "#/components/objects/WeakSet",
@@ -258,15 +265,6 @@
         "type": "object",
         "$id": "#/components/objects/WeakMap",
         "properties": {}
-      }
-    },
-    "aliases": {
-      "NativeUnion": {
-        "$id": "#/components/aliases/NativeUnion",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/NativeUnion.Union"
-        }
       }
     }
   },

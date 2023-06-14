@@ -1,13 +1,20 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TagLength"
+      "$ref": "#/components/schemas/TagLength"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "TagLength": {
+        "$id": "#/components/schemas/TagLength",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TagLength.Type"
+        }
+      },
       "TagLength.Type": {
-        "$id": "#/components/objects/TagLength.Type",
+        "$id": "#/components/schemas/TagLength.Type",
         "type": "object",
         "properties": {
           "fixed": {
@@ -128,15 +135,6 @@
         ],
         "description": "@minLength 3\n@maxLength 7",
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "TagLength": {
-        "$id": "#/components/aliases/TagLength",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/TagLength.Type"
-        }
       }
     }
   },

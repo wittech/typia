@@ -1,13 +1,20 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/aliases/TagType"
+      "$ref": "#/components/schemas/TagType"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
+      "TagType": {
+        "$id": "#/components/schemas/TagType",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TagType.Type"
+        }
+      },
       "TagType.Type": {
-        "$id": "#/components/objects/TagType.Type",
+        "$id": "#/components/schemas/TagType.Type",
         "type": "object",
         "properties": {
           "int": {
@@ -64,15 +71,6 @@
         ],
         "description": "Unsigned integer value.\n\n@type uint",
         "x-typia-jsDocTags": []
-      }
-    },
-    "aliases": {
-      "TagType": {
-        "$id": "#/components/aliases/TagType",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/objects/TagType.Type"
-        }
       }
     }
   },

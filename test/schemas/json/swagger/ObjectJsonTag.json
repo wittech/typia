@@ -1,11 +1,11 @@
 {
   "schemas": [
     {
-      "$ref": "#/components/objects/ObjectJsonTag"
+      "$ref": "#/components/schemas/ObjectJsonTag"
     }
   ],
   "components": {
-    "objects": {
+    "schemas": {
       "ObjectJsonTag": {
         "type": "object",
         "properties": {
