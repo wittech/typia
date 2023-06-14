@@ -437,11 +437,29 @@ export namespace CheckerProgrammer {
                     });
 
             // NATIVE CLASSES
-            for (const native of meta.natives)
-                binaries.push({
-                    expression: check_native(explore)(importer)(native)(input),
-                    combined: false,
-                });
+            for (const native of meta.natives) {
+                // 当属性定义为prisma类似的cretaed?: Date | string类型的时候，会先判断是否为string，下面的转化不会做；
+                // 由于是在check_native内部判断是是否是Date类型并进行的值转化，所以暂时在这里做一个顺序调整，将判断时间的放到字符串前面去；
+                if (
+                    meta.atomics.length === 1 &&
+                    meta.atomics[0] === "string" &&
+                    native === "Date"
+                ) {
+                    //在string的判断前面插入
+                    binaries.splice(binaries.length - 1, 0, {
+                        expression:
+                            check_native(explore)(importer)(native)(input),
+                        combined: false,
+                    });
+                } else {
+                    // 其它情况依然用push追加到后面去；
+                    binaries.push({
+                        expression:
+                            check_native(explore)(importer)(native)(input),
+                        combined: false,
+                    });
+                }
+            }
 
             //----
             // INSTANCES
